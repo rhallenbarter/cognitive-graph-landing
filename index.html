@@ -1,13 +1,79 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cognitive Graph Hiring</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    form {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+    input, button {
+      padding: 12px;
+      font-size: 16px;
+    }
+    button {
+      background-color: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #333;
+    }
+    .thank-you {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #e0ffe0;
+      border: 1px solid #b6f2b6;
+      color: #006400;
+      display: none;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to Cognitive Graph Hiring</h1>
-  <p>This is the MVP landing page.</p>
+  <h1>Cognitive Graph Hiring</h1>
+  <p>
+    We’re building a new way to discover talent — not through resumes, but by how people think, solve problems, and communicate using AI.
+  </p>
+  <p>
+    This is not a job board. It’s not a personality test. It’s the first step toward understanding cognition at scale — for hiring.
+  </p>
+  <h2>Join the Early Access Waitlist</h2>
+  <form action="https://formspree.io/f/mzbqjgdj" method="POST" onsubmit="showMessage()">
+    <input type="text" name="name" placeholder="Your name" required />
+    <input type="email" name="email" placeholder="Your email" required />
+    <button type="submit">Request Access</button>
+  </form>
+  <div class="thank-you" id="thankYouMessage">
+    Thank you! We’ve received your request and will be in touch soon.
+  </div>
+
+  <script>
+    function showMessage() {
+      setTimeout(() => {
+        document.querySelector('form').style.display = 'none';
+        document.getElementById('thankYouMessage').style.display = 'block';
+      }, 200);
+    }
+  </script>
 </body>
 </html>
